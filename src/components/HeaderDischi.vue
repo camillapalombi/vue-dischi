@@ -1,6 +1,6 @@
 <template>
   <header>
-      <img src="../assets/img/spotify-logo.png" alt="Spotify Logo">
+      <img class="img-fluid" src="../assets/img/spotify-logo.png" alt="Spotify Logo">
   </header>
 </template>
 
@@ -21,7 +21,7 @@ header {
     display: flex;
     align-items: center;
         img {
-            width: 45px;
+            height: 40px;
             margin-left: 20px;
         }
 }
