@@ -1,7 +1,10 @@
 <template>
   <main>
     <div class="container">
-      <div v-if="arrDischi == null">Dischi in caricamento, ATTENDI!</div>
+      <div class="delay-data text-center" v-if="arrDischi == null">
+        <div>CARICAMENTO</div>
+        <img class="loading" src="../assets/img/loading.png" alt="loading">
+      </div>
       <div v-else class="row d-flex justify-content-center align-items-stretch g-3">
 
         <box-disco
@@ -29,11 +32,11 @@ export default {
    BoxDisco 
   },
   created () {
-    axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response) => {
-      console.log(response)
+    setTimeout(() => {
+      axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response) => {
       this.arrDischi = response.data.response;
-      console.log(this.arrDischi)
-    })
+    });
+    }, 3000);
   } 
 }
 </script>
@@ -45,9 +48,35 @@ $secondary: #1e2d3b;
 
 main {
   background-color: $secondary;
+    .row {
+      padding-top: 30px;
+      padding-bottom: 40px;
+    }
 }
-.row {
-  padding-top: 30px;
-  padding-bottom: 40px;
+.delay-data {
+  width: 100%;
+  height: calc(100vh - 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  div {
+    color: white;
+    font-size: 35px;
+    font-style: italic;
+  }
+}
+.loading {
+  width: 60px;
+  font-size: 60px;
+  animation-name: loading;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes loading {
+    0% {
+        transform: rotate(1turn);
+    }
 }
 </style>

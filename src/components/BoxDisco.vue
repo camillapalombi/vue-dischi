@@ -27,20 +27,20 @@ $success: #2e3a46;
   background-color: $success;
   padding-bottom: 15px;
   padding-top: 30px;
-    div {
-      color: $gray-600;
+    .box-single-disc {
+      width: 170px;
+      font-size: 15px;
+        .img-poster {
+          width: 170px;
+        }
+        h3 {
+          font-size: 24px;
+          color: white;
+        }
+        div {
+          color: $gray-600;
+        }
     }
-}
-.img-poster {
-  width: 170px;
-}
-h3 {
-  font-size: 24px;
-  color: white;
-}
-.box-single-disc {
-  width: 170px;
-  font-size: 15px;
 }
 
 </style>
