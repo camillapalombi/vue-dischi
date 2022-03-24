@@ -16,13 +16,14 @@ export default {
 $primary: #2e3a46;
 
 header {
-    height: 4rem;
+    height: 5rem;
     background-color: $primary;
     display: flex;
     align-items: center;
         img {
             height: 40px;
             margin-left: 20px;
+            margin-bottom: 15px;
         }
 }
 </style>

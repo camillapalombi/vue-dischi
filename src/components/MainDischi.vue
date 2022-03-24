@@ -2,7 +2,7 @@
   <main>
     <div class="container">
       <div v-if="arrDischi == null">Dischi in caricamento, ATTENDI!</div>
-      <div v-else class="row d-flex justify-content-center g-3">
+      <div v-else class="row d-flex justify-content-center align-items-stretch g-3">
 
         <box-disco
         v-for="dischi in arrDischi"
@@ -45,5 +45,9 @@ $secondary: #1e2d3b;
 
 main {
   background-color: $secondary;
+}
+.row {
+  padding-top: 30px;
+  padding-bottom: 40px;
 }
 </style>
