@@ -2,20 +2,23 @@
   <header>
       <img class="img-fluid" src="../assets/img/spotify-logo.png" alt="Spotify Logo">
 
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Seleziona genere musicale</option>
-        <option value="rock">Rock</option>
-        <option value="pop">Pop</option>
-        <option value="jazz">Jazz</option>
-        <option value="metal">Metal</option>
-    </select>
+      <gender-select @select="rilanciaSelect" />
 
   </header>
 </template>
 
 <script>
+import GenderSelect from './GenderSelect.vue';
 export default {
     name: 'HeaderDischi',
+    components: {
+        GenderSelect
+    },
+    methods: {
+        rilanciaSelect(argomento) {
+            this.$emit('ricerca-rilanciata', argomento)
+        }
+    }
 }
 </script>
 
@@ -35,11 +38,5 @@ header {
             margin-left: 20px;
             margin-bottom: 15px;
         }
-}
-
-.form-select {
-    width: 250px;
-    margin-bottom: 15px;
-    margin-right: 20px;
 }
 </style>

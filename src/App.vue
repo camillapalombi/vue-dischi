@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <header-dischi />
-    <main-dischi />
+    <header-dischi @ricerca-rilanciata="setSelected" />
+    <main-dischi :gender-selezionato="selectedGender" />
   </div>
 </template>
 
@@ -11,9 +11,20 @@ import MainDischi from '../src/components/MainDischi.vue';
 
 export default {
   name: 'App',
+  data () {
+    return {
+        selectedGender: '',
+    }
+},
   components: {
     HeaderDischi,
     MainDischi
+  },
+  methods: {
+    setSelected(argomentoEvento) {
+      this.selectedGender = argomentoEvento;
+      console.log(this.selectedGender)
+    }
   }
 }
 </script>

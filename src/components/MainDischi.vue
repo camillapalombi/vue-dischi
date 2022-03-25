@@ -28,6 +28,9 @@ export default {
       arrDischi: null,
    }
  },
+ props: {
+   genderSelezionato: String,
+ },
  components: {
    BoxDisco 
   },
@@ -47,6 +50,7 @@ export default {
 $secondary: #1e2d3b;
 
 main {
+  min-height: calc(100vh - 5rem);
   background-color: $secondary;
     .row {
       padding-top: 30px;
