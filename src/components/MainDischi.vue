@@ -8,7 +8,7 @@
       <div v-else class="row d-flex justify-content-center align-items-stretch g-3">
 
         <box-disco
-        v-for="dischi in arrDischi"
+        v-for="dischi in filteredGender()"
         :key="dischi.title"
         :data-dischi="dischi" />
 
@@ -31,6 +31,15 @@ export default {
  props: {
    genderSelezionato: String,
  },
+ methods: {
+   filteredGender() {
+     if (this.genderSelezionato != 'all') {
+     return this.arrDischi.filter(element => element.genre.toLowerCase().includes(this.genderSelezionato.toLowerCase()));
+     } else {
+       return this.arrDischi;
+     }
+   }
+ },
  components: {
    BoxDisco 
   },
@@ -50,7 +59,7 @@ export default {
 $secondary: #1e2d3b;
 
 main {
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100vh - 3.99rem);
   background-color: $secondary;
     .row {
       padding-top: 30px;

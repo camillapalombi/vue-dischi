@@ -2,7 +2,7 @@
   <div>
 
     <select @change="$emit('select', selectedGender)" class="form-select" aria-label="Default select example" v-model="selectedGender">
-        <option selected>Seleziona genere musicale</option>
+        <option value="all">All</option>
         <option value="rock">Rock</option>
         <option value="pop">Pop</option>
         <option value="jazz">Jazz</option>
@@ -17,7 +17,7 @@ export default {
 name: 'GenderSelect',
 data () {
     return {
-        selectedGender: '',
+        selectedGender: 'all',
     }
 }
 }
@@ -27,6 +27,6 @@ data () {
 .form-select {
     width: 250px;
     margin-bottom: 15px;
-    margin-right: 20px;
+    margin-right: 30px;
 }
 </style>
