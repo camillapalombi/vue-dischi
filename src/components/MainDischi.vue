@@ -30,14 +30,17 @@ export default {
  },
  props: {
    genderSelezionato: String,
+   strSearchAuthor: String,
  },
  methods: {
    filteredGender() {
+     let saveVariable;
      if (this.genderSelezionato != 'all') {
-     return this.arrDischi.filter(element => element.genre.toLowerCase().includes(this.genderSelezionato.toLowerCase()));
+     saveVariable = this.arrDischi.filter(element => element.genre.toLowerCase().includes(this.genderSelezionato.toLowerCase()));
      } else {
-       return this.arrDischi;
+       saveVariable = this.arrDischi;
      }
+     return saveVariable.filter(element => element.author.toLowerCase().includes(this.strSearchAuthor.toLowerCase()));
    }
  },
  components: {

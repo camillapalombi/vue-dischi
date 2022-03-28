@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <header-dischi @ricerca-rilanciata="setSelected" />
-    <main-dischi :gender-selezionato="selectedGender" />
+    <header-dischi @ricerca-rilanciata="setSelected" @author-inserted="SetAuthorSrc"/>
+    <main-dischi :gender-selezionato="selectedGender" :str-search-author="strSearchAuthor"/>
   </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
   data () {
     return {
         selectedGender: '',
+        strSearchAuthor: '',
     }
 },
   components: {
@@ -24,6 +25,10 @@ export default {
     setSelected(argomentoEvento) {
       this.selectedGender = argomentoEvento;
       console.log(this.selectedGender)
+    },
+    SetAuthorSrc(authorArguments) {
+      console.log(authorArguments)
+      this.strSearchAuthor = authorArguments;
     }
   }
 }

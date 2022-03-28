@@ -3,6 +3,10 @@
       <img class="img-fluid" src="../assets/img/spotify-logo.png" alt="Spotify Logo">
 
       <gender-select @select="rilanciaSelect" />
+      <div>
+        <label for="">CERCA PER AUTORE:</label>
+        <input type="text" @input="$emit('author-inserted', $event.target.value)">
+      </div>
 
   </header>
 </template>
@@ -38,5 +42,15 @@ header {
             margin-left: 20px;
             margin-bottom: 15px;
         }
+}
+
+input {
+    margin-right: 20px;
+}
+label {
+    color: white;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 20px;
 }
 </style>
